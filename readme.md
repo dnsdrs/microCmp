@@ -28,9 +28,9 @@ microCmp is a minimalist javascript-HTML-CSS-based CMP that enables you to trigg
 
 - Download the microCmp code from [this page](https://github.com/dnsdrs/microCmp/blob/main/microCmp.js)
 - Host it on your project
-- Insert the `<script src="/microCmp.js">` tag as high as possible in the `<head>` section of all your pages
+- Insert the script (for instance `<script src="/microCmp.js">`) tag as high as possible in the `<head>` section of all your pages
 
-### 2. **Add the microCmp HTML to your page**
+### 2. **Add the microCmp HTML to all your pages**
 
 ```html
 <div class="microCmp_notice">
@@ -183,8 +183,60 @@ microCmp.addTranslation("de", {
 ### 5. **Initiate the microCMP**
 
 - just use `microCmp.init()` to display the microCmp and start using it
+- note that you can use `microCmp.toTriggerOnConsent.push` before `microCmp.init()` but the functions will run only on `init()` (if all conditions are met)
 
 ### 6. **Use the microCMP**
+
+The end goal of this microCmp boils down to managing if and when code should run.
+
+To do that, just add your code in here:
+
+```js
+microCmp.toTriggerOnConsent.push(function () {
+  // your code here
+})
+```
+
+It will append your code as a function to a queue:
+
+- If the consent is not given (or given yet), the queue won't be executed.
+- If or when the consent is given, all functions pushed to the queue will run.
+
+Please note that you cannot push named function directly in the queue
+
+> ⛔️ Don't do that ⛔️
+>
+> ```js
+> microCmp.toTriggerOnConsent.push(myFunction())
+> ```
+>
+> ```js
+> microCmp.toTriggerOnConsent.push(console.log("unicorn"))
+> ```
+>
+> ```js
+> microCmp.toTriggerOnConsent.push(console.log("unicorn"))
+> ```
+
+> 👍 Do that instead 👍
+>
+> ```js
+> microCmp.toTriggerOnConsent.push(function() {
+>     myFunction()
+> )}
+> ```
+>
+> ```js
+> microCmp.toTriggerOnConsent.push(function () {
+>   console.log("unicorn")
+> })
+> ```
+>
+> ```js
+> microCmp.toTriggerOnConsent.push(function () {
+>   console.log("unicorn")
+> })
+> ```
 
 ## Backlog
 
