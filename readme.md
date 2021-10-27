@@ -46,10 +46,16 @@ microCmp is a minimalist javascript-HTML-CSS-based CMP that enables you to trigg
 
 Use the following classes to style your microCmp :
 
-- microCmp_notice
+| css class          | usage                                 |
+| ------------------ | ------------------------------------- |
+| `.microCmp_notice` | div that contains whole cmp notice    |
+| `.microCmp_text`   | div that contains the cmp text        |
+| `.microCmp_button` | div that contains the two cmp buttons |
+| `.microCmp_refuse` | refuse div                            |
+| `.microCmp_accept` | accept div                            |
 
 <details>
-    <summary>See example:</summary>
+<summary>See css example:</summary>
 
 ```css
 * {
@@ -155,11 +161,32 @@ Use the following classes to style your microCmp :
 
 ### 4. **Configure your microCmp**
 
+- add a translation using `microCmp.addTranslation(language, translation)`
+  where
+  - `language` is a two letters string describing the translation language
+  - `translation` is an object containing a `text` (string), `link` (string), `accept` (string) label and `refuse` (string) label
+
+> ⚠️⚠️⚠️ please note that the text string has to contain a link html tag `<a href='#' class='microCmp_link'>link text</a>` ⚠️⚠️⚠️
+
+```js
+microCmp.addTranslation("de", {
+  text: "Wir benutzen Cookies. Bitte lesen Sie sich <a href='#' class='microCmp_link'>diesem Text</a>",
+  link: "https://privacy.thewaltdisneycompany.com/fr/regles-de-respect-de-la-vie-privee/quest-ce-quun-cookie/",
+  accept: "ALLES ANNEHMEN",
+  refuse: "ALLES BLOCKIEREN",
+})
+```
+
+- set the microCmp language using `microCmp.setLanguage(language)`
+  where language is a two letters string describing the translation language, for instance : `microCmp.setLanguage('de')`
+
 ### 5. **Initiate the microCMP**
 
-`microCmp.init()`
+- just use `microCmp.init()` to display the microCmp and start using it
+
+### 6. **Use the microCMP**
 
 ## Backlog
 
 - [ ] Delete all first party cookies on click to Refuse
-- [ ] Sort functions by public vs private functions
+- [ ] Differentiate functions by public vs private functions
