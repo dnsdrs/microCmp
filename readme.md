@@ -24,143 +24,142 @@ microCmp is a minimalist javascript-HTML-CSS-based CMP that enables you to trigg
 
 ## Setup
 
-1. **Load the microCmp library**
+### 1. **Load the microCmp library**
 
 - Download the microCmp code from [this page](https://github.com/dnsdrs/microCmp/blob/main/microCmp.js)
 - Host it on your project
 - Insert the `<script src="/microCmp.js">` tag as high as possible in the `<head>` section of all your pages
 
-2. **Add the microCmp HTML to your page**
+### 2. **Add the microCmp HTML to your page**
 
-```
+```html
 <div class="microCmp_notice">
-    <div class="microCmp_text"></div>
-    <div class="microCmp_buttons">
-        <button class="microCmp_refuse microCmp_button"></button>
-        <button class="microCmp_accept microCmp_button"></button>
-    </div>
+  <div class="microCmp_text"></div>
+  <div class="microCmp_buttons">
+    <button class="microCmp_refuse microCmp_button"></button>
+    <button class="microCmp_accept microCmp_button"></button>
+  </div>
 </div>
 ```
 
-3. **Style your microCmp**
+### 3. **Style your microCmp**
 
 Use the following classes to style your microCmp :
 
 - microCmp_notice
 
 <details>
-<summary>See example:</summary>
+    <summary>See example:</summary>
 
-```
+```css
 * {
-    box-sizing: border-box;
-    border: 0px;
-    margin: 0px;
-    padding: 0px;
+  box-sizing: border-box;
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
 }
 
 .cmp_notice {
-    display: none;
-    position: absolute;
-    background-color: #353744;
-    width: 292px;
-    bottom: 0px;
-    right: 0px;
-    color: #F9F9F9;
-    margin: 16px;
-    font-family: Avenir;
-    font-size: 12px;
-    padding-top: 16px;
-    padding-bottom: 16px;
-    box-shadow: 0 0 18px rgba(0, 0, 0, 0.2);
+  display: none;
+  position: absolute;
+  background-color: #353744;
+  width: 292px;
+  bottom: 0px;
+  right: 0px;
+  color: #f9f9f9;
+  margin: 16px;
+  font-family: Avenir;
+  font-size: 12px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.2);
 }
 
 .cmp_text {
-    line-height: 18px;
-    padding: 0px 16px 8px 16px;
+  line-height: 18px;
+  padding: 0px 16px 8px 16px;
 }
 
 .cmp_buttons {
-    margin: 10px 12px 10px 12px;
-    width: 260px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
+  margin: 10px 12px 10px 12px;
+  width: 260px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .cmp_button {
-    background-color: rgba(249, 249, 249, 0.1);
-    width: 100%;
-    height: 35px;
-    border: none;
-    color: #F9F9F9;
-    margin: 5px 0px;
-    border-radius: 4px;
-    font-size: 12px;
-    letter-spacing: 1.1px;
-    font-weight: 500;
-    font-family: Avenir;
-    cursor: pointer;
+  background-color: rgba(249, 249, 249, 0.1);
+  width: 100%;
+  height: 35px;
+  border: none;
+  color: #f9f9f9;
+  margin: 5px 0px;
+  border-radius: 4px;
+  font-size: 12px;
+  letter-spacing: 1.1px;
+  font-weight: 500;
+  font-family: Avenir;
+  cursor: pointer;
 }
 
 .cmp_link {
-    color: #1276CE;
-    font-weight: bold;
+  color: #1276ce;
+  font-weight: bold;
 }
 
 .cmp_active {
-    display: block;
+  display: block;
 }
 
 @media (max-width: 1000px) {
-    .cmp_notice {
-        position: absolute;
-        width: 100%;
-        top: 0px;
-        bottom: unset;
-        right: unset;
-        margin: 0px;
-    }
-    .cmp_buttons {
-        flex-direction: row;
-        justify-content: space-between;
-        width: unset;
-        margin-inline: 16px;
-    }
-    .cmp_button {
-        width: 49%;
-    }
+  .cmp_notice {
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    bottom: unset;
+    right: unset;
+    margin: 0px;
+  }
+  .cmp_buttons {
+    flex-direction: row;
+    justify-content: space-between;
+    width: unset;
+    margin-inline: 16px;
+  }
+  .cmp_button {
+    width: 49%;
+  }
 }
 
 @media (max-width: 480px) {
-    .cmp_notice {
-        position: absolute;
-        width: 100%;
-        top: 0px;
-        bottom: unset;
-        right: unset;
-        margin: 0px;
-    }
-    .cmp_buttons {
-        flex-direction: column;
-        width: unset;
-    }
-    .cmp_button {
-        width: unset;
-    }
+  .cmp_notice {
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    bottom: unset;
+    right: unset;
+    margin: 0px;
+  }
+  .cmp_buttons {
+    flex-direction: column;
+    width: unset;
+  }
+  .cmp_button {
+    width: unset;
+  }
 }
 ```
 
 </details>
 
-4. **Configure your microCmp**
+### 4. **Configure your microCmp**
+
+### 5. **Initiate the microCMP**
 
 `microCmp.init()`
-
-5. **Initiate the microCMP**
 
 ## Backlog
 
 - [ ] Delete all first party cookies on click to Refuse
-- [ ] Task 2
-- [ ] Task 3
+- [ ] Sort functions by public vs private functions

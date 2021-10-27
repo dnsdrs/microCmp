@@ -1,4 +1,4 @@
-var cmp = {
+var microCmp = {
     currentLanguage: 'fr',
     htmlElements: {
         notice: document.querySelector(".cmp_notice"),
@@ -24,34 +24,34 @@ var cmp = {
         consentIsResolved = resolve
     }),
     reset: function() {
-        cmp.htmlElements.notice.classList.add("cmp_active")
-        cmp.setCookie("consent", "undefined", -1)
+        microCmp.htmlElements.notice.classList.add("cmp_active")
+        microCmp.setCookie("consent", "undefined", -1)
         window.location.reload()
     },
     open: function() {
-        cmp.htmlElements.notice.classList.add("cmp_active")
+        microCmp.htmlElements.notice.classList.add("cmp_active")
     },
     accept: function() {
-        cmp.consentStatus = true;
-        cmp.htmlElements.notice.classList.remove("cmp_active")
-        cmp.setCookie("consent", true, 180)
+        microCmp.consentStatus = true;
+        microCmp.htmlElements.notice.classList.remove("cmp_active")
+        microCmp.setCookie("consent", true, 180)
         consentIsResolved()
     },
     refuse: function() {
-        cmp.consentStatus = false;
-        cmp.htmlElements.notice.classList.remove("cmp_active")
-        cmp.setCookie("consent", false, 180)
+        microCmp.consentStatus = false;
+        microCmp.htmlElements.notice.classList.remove("cmp_active")
+        microCmp.setCookie("consent", false, 180)
     },
     setLanguage: function(language) {
-        cmp.currentLanguage = language;
-        cmp.htmlElements.text.innerHTML = cmp.translations[cmp.currentLanguage].text
-        cmp.htmlElements.link = document.querySelector(".cmp_link")
-        cmp.htmlElements.link.href = cmp.translations[cmp.currentLanguage].link
-        cmp.htmlElements.accept.innerText = cmp.translations[cmp.currentLanguage].accept
-        cmp.htmlElements.refuse.innerText = cmp.translations[cmp.currentLanguage].refuse
+        microCmp.currentLanguage = language;
+        microCmp.htmlElements.text.innerHTML = microCmp.translations[microCmp.currentLanguage].text
+        microCmp.htmlElements.link = document.querySelector(".cmp_link")
+        microCmp.htmlElements.link.href = microCmp.translations[microCmp.currentLanguage].link
+        microCmp.htmlElements.accept.innerText = microCmp.translations[microCmp.currentLanguage].accept
+        microCmp.htmlElements.refuse.innerText = microCmp.translations[microCmp.currentLanguage].refuse
     },
     getConsent: function() {
-        if (cmp.getCookie("consent") == 'true') {
+        if (microCmp.getCookie("consent") == 'true') {
             return true
         } else {
             return false
@@ -80,28 +80,28 @@ var cmp = {
     },
     toTriggerOnConsent: [],
     init: function() {
-        cmp.htmlElements.text.innerHTML = cmp.translations[cmp.currentLanguage].text
-        cmp.htmlElements.link = document.querySelector(".cmp_link")
-        cmp.htmlElements.link.href = cmp.translations[cmp.currentLanguage].link
-        cmp.htmlElements.accept.innerText = cmp.translations[cmp.currentLanguage].accept
-        cmp.htmlElements.refuse.innerText = cmp.translations[cmp.currentLanguage].refuse
-        if (cmp.getCookie("consent") == 'undefined' || cmp.getCookie("consent") == '') {
-            cmp.htmlElements.notice.classList.add("cmp_active")
-        } else if (cmp.getConsent()) {
+        microCmp.htmlElements.text.innerHTML = microCmp.translations[microCmp.currentLanguage].text
+        microCmp.htmlElements.link = document.querySelector(".cmp_link")
+        microCmp.htmlElements.link.href = microCmp.translations[microCmp.currentLanguage].link
+        microCmp.htmlElements.accept.innerText = microCmp.translations[microCmp.currentLanguage].accept
+        microCmp.htmlElements.refuse.innerText = microCmp.translations[microCmp.currentLanguage].refuse
+        if (microCmp.getCookie("consent") == 'undefined' || microCmp.getCookie("consent") == '') {
+            microCmp.htmlElements.notice.classList.add("cmp_active")
+        } else if (microCmp.getConsent()) {
             consentIsResolved()
         }
-        cmp.htmlElements.accept.addEventListener("click", function() {
-            cmp.accept()
+        microCmp.htmlElements.accept.addEventListener("click", function() {
+            microCmp.accept()
 
         })
-        cmp.htmlElements.refuse.addEventListener("click", function() {
-            cmp.refuse()
+        microCmp.htmlElements.refuse.addEventListener("click", function() {
+            microCmp.refuse()
         })
-        cmp.triggerOnConsent
+        microCmp.triggerOnConsent
             .then(
                 function() {
-                    while (cmp.toTriggerOnConsent.length > 0) {
-                        cmp.toTriggerOnConsent.shift().apply();
+                    while (microCmp.toTriggerOnConsent.length > 0) {
+                        microCmp.toTriggerOnConsent.shift().apply();
                     }
                 }
             );
