@@ -213,10 +213,6 @@ Please note that you cannot push named function directly in the queue
 > ```js
 > microCmp.toTriggerOnConsent.push(console.log("unicorn"))
 > ```
->
-> ```js
-> microCmp.toTriggerOnConsent.push(console.log("unicorn"))
-> ```
 
 > 👍 Do that instead 👍
 >
@@ -231,14 +227,9 @@ Please note that you cannot push named function directly in the queue
 >   console.log("unicorn")
 > })
 > ```
->
-> ```js
-> microCmp.toTriggerOnConsent.push(function () {
->   console.log("unicorn")
-> })
-> ```
 
 ## Backlog
 
-- [ ] Delete all first party cookies on click to Refuse
-- [ ] Differentiate functions by public vs private functions
+- [ ] Add a demo page
+- [ ] Delete all first party cookies on click to Refuse or on `microCmp.reset()`
+- [ ] Group all public functions (`microCmp.public.function()`) for clarity
