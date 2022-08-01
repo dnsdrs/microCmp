@@ -219,7 +219,7 @@ Please note that you cannot push named function directly in the queue
 > ```js
 > microCmp.toTriggerOnConsent.push(function() {
 >     myFunction()
-> )}
+> })
 > ```
 >
 > ```js
