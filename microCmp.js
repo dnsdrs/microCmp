@@ -14,13 +14,13 @@ var microCmp = {
             refuse: "TOUT BLOQUER"
         },
         en: {
-            text: "we use cookies. Read more on <a href='#' class='miroCmp_link'>this link</a>",
+            text: "we use cookies. Read more on <a href='#' class='microCmp_link'>this link</a>",
             link: "https://privacy.thewaltdisneycompany.com/fr/regles-de-respect-de-la-vie-privee/quest-ce-quun-cookie/",
             accept: "ACCEPT ALL",
             refuse: "BLOCK ALL"
         }
     },
-    triggerOnConsent: new Promise((resolve, reject) => {
+    triggerOnConsent: new Promise(function (resolve, reject) {
         consentIsResolved = resolve
     }),
     addTranslation: function(language, translation) {
@@ -57,11 +57,11 @@ var microCmp = {
         }
     },
     getCookie: function(cname) {
-        let name = cname + "=";
-        let decodedCookie = decodeURIComponent(document.cookie);
-        let ca = decodedCookie.split(';');
-        for (let i = 0; i < ca.length; i++) {
-            let c = ca[i];
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
             while (c.charAt(0) == ' ') {
                 c = c.substring(1);
             }
@@ -72,12 +72,11 @@ var microCmp = {
         return "";
     },
     setCookie: function setCookie(cname, cvalue, exdays) {
-        const d = new Date();
+        var d = new Date();
         d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-        let expires = "expires=" + d.toUTCString();
+        var expires = "expires=" + d.toUTCString();
         document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
     },
-    toTriggerOnConsent: [],
     init: function() {
         microCmp.htmlElements.notice = document.querySelector(".microCmp_notice")
         microCmp.htmlElements.text = document.querySelector(".microCmp_text")
@@ -120,3 +119,5 @@ var microCmp = {
             );
     }
 }
+microCmp.toTriggerOnConsent = microCmp.toTriggerOnConsent || []
+microCmp.init()

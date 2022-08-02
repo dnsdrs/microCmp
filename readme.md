@@ -6,7 +6,7 @@ microCmp is a minimalist javascript-HTML-CSS-based CMP that enables you to trigg
 
 ## Features
 
-- Create yout CMP notice with
+- Create your CMP notice with
   - A text that includes a link
   - An Accept button
   - A Refuse button
@@ -15,7 +15,7 @@ microCmp is a minimalist javascript-HTML-CSS-based CMP that enables you to trigg
 - Trigger functions depeding on the user's consent
   - Don't trigger anything while the user hasn't made a choice
   - If the user has accepted in a previous page or session, trigger the functions on page load
-  - If the user has refused in a previous page or sessions, don't trigger the functions
+  - If the user has refused in a previous page or session, don't trigger the functions
   - If the user hasn't made a choice in the previous page or session, trigger all previously asked functions on click on the Accept button
   - If the user hasn't made a choice in the previous page or session, prevent all previously asked functions from running on click on the Refuse button
 - Reopen CMP on demand
