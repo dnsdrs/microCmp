@@ -94,7 +94,6 @@ var microCmp = {
         }
         microCmp.htmlElements.accept.addEventListener("click", function() {
             microCmp.accept()
-
         })
         microCmp.htmlElements.refuse.addEventListener("click", function() {
             microCmp.refuse()
@@ -102,7 +101,6 @@ var microCmp = {
         microCmp.triggerOnConsent
             .then(
                 function() {
-
                     var processing = false;
                     var checkqueue = setInterval(function() {
 
