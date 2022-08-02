@@ -65,7 +65,7 @@ Use the following classes to style your microCmp :
   padding: 0px;
 }
 
-.cmp_notice {
+.microCmp_notice {
   display: none;
   position: absolute;
   background-color: #353744;
@@ -81,12 +81,12 @@ Use the following classes to style your microCmp :
   box-shadow: 0 0 18px rgba(0, 0, 0, 0.2);
 }
 
-.cmp_text {
+.microCmp_text {
   line-height: 18px;
   padding: 0px 16px 8px 16px;
 }
 
-.cmp_buttons {
+.microCmp_buttons {
   margin: 10px 12px 10px 12px;
   width: 260px;
   margin: auto;
@@ -94,7 +94,7 @@ Use the following classes to style your microCmp :
   flex-direction: column;
 }
 
-.cmp_button {
+.microCmp_button {
   background-color: rgba(249, 249, 249, 0.1);
   width: 100%;
   height: 35px;
@@ -109,17 +109,17 @@ Use the following classes to style your microCmp :
   cursor: pointer;
 }
 
-.cmp_link {
+.microCmp_link {
   color: #1276ce;
   font-weight: bold;
 }
 
-.cmp_active {
+.microCmp_active {
   display: block;
 }
 
 @media (max-width: 1000px) {
-  .cmp_notice {
+  .microCmp_notice {
     position: absolute;
     width: 100%;
     top: 0px;
@@ -127,19 +127,19 @@ Use the following classes to style your microCmp :
     right: unset;
     margin: 0px;
   }
-  .cmp_buttons {
+  .microCmp_buttons {
     flex-direction: row;
     justify-content: space-between;
     width: unset;
     margin-inline: 16px;
   }
-  .cmp_button {
+  .microCmp_button {
     width: 49%;
   }
 }
 
 @media (max-width: 480px) {
-  .cmp_notice {
+  .microCmp_notice {
     position: absolute;
     width: 100%;
     top: 0px;
@@ -147,11 +147,11 @@ Use the following classes to style your microCmp :
     right: unset;
     margin: 0px;
   }
-  .cmp_buttons {
+  .microCmp_buttons {
     flex-direction: column;
     width: unset;
   }
-  .cmp_button {
+  .microCmp_button {
     width: unset;
   }
 }
@@ -217,8 +217,8 @@ Please note that you cannot push named function directly in the queue
 > 👍 Do that instead 👍
 >
 > ```js
-> microCmp.toTriggerOnConsent.push(function() {
->     myFunction()
+> microCmp.toTriggerOnConsent.push(function () {
+>   myFunction()
 > })
 > ```
 >
