@@ -118,4 +118,3 @@ var microCmp = {
     }
 }
 microCmp.toTriggerOnConsent = microCmp.toTriggerOnConsent || []
-microCmp.init()
