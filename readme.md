@@ -184,7 +184,7 @@ Use the following classes to style your microCmp :
 ```js
 microCmp.addTranslation("de", {
   text: "Wir möchten Trackings anwenden, um Ihre Nutzung der Webseite zu verstehen. Diese benötigen u.a. das Speichern von Cookies. Mehr in unserer <a href='#' class='microCmp_link'>Datenschutzerklärung</a>",
-  link: "https://www.hdf-kino.de/datenschutz/",
+  link: "https://www.example.de/datenschutz/",
   accept: "ALLES ANNEHMEN",
   refuse: "ALLES BLOCKIEREN",
 })
@@ -209,7 +209,7 @@ Full initial configuration will look like that :
     s.onload = function () {
       microCmp.addTranslation("de", {
         text: "Wir möchten Trackings anwenden, um Ihre Nutzung der Webseite zu verstehen. Diese benötigen u.a. das Speichern von Cookies. Mehr in unserer <a href='#' class='microCmp_link'>Datenschutzerklärung</a>",
-        link: "https://www.hdf-kino.de/datenschutz/",
+        link: "https://www.example.de/datenschutz/",
         accept: "ALLES ANNEHMEN",
         refuse: "ALLES BLOCKIEREN",
       })
