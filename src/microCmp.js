@@ -9,13 +9,13 @@ var microCmp = {
     translations: {
         fr: {
             text: "Nous utilisons des cookies pour mieux comprendre votre comportement en ligne, améliorer nos services, communiquer avec vous, personnaliser le contenu ou la publicité sur nos plateformes et vous offrir des fonctionnalités liées aux médias sociaux. Pour en savoir plus, suivez <a href='#' class='microCmp_link'>ce lien</a>",
-            link: "https://privacy.thewaltdisneycompany.com/fr/regles-de-respect-de-la-vie-privee/quest-ce-quun-cookie/",
+            link: "https://privacy.example.com/fr/quest-ce-quun-cookie/",
             accept: "TOUT ACCEPTER",
             refuse: "TOUT BLOQUER"
         },
         en: {
-            text: "we use cookies. Read more on <a href='#' class='microCmp_link'>this link</a>",
-            link: "https://privacy.thewaltdisneycompany.com/fr/regles-de-respect-de-la-vie-privee/quest-ce-quun-cookie/",
+            text: "We use cookies. Read more on <a href='#' class='microCmp_link'>this link</a>",
+            link: "https://privacy.example.com/en/what-is-a-cookie/",
             accept: "ACCEPT ALL",
             refuse: "BLOCK ALL"
         }
