@@ -37,7 +37,7 @@ microCmp is a minimalist javascript-HTML-CSS-based CMP that enables you to trigg
     s.src = "../src/microCmp.js"
     document.head.appendChild(s)
     s.onload = function () {
-      // insert microCmp functions here (addTranslation, setLanguage, init) -- see sections 4 to 6
+      // insert microCmp functions here (addTranslation, setLanguage, init) -- see sections 4 and 5
     }
   })
 </script>
@@ -207,7 +207,6 @@ Full initial configuration will look like that :
     s.src = "../src/microCmp.js"
     document.head.appendChild(s)
     s.onload = function () {
-      // insert microCmp functions here (addTranslation, setLanguage, init) -- see sections 4 to 6
       microCmp.addTranslation("de", {
         text: "Wir möchten Trackings anwenden, um Ihre Nutzung der Webseite zu verstehen. Diese benötigen u.a. das Speichern von Cookies. Mehr in unserer <a href='#' class='microCmp_link'>Datenschutzerklärung</a>",
         link: "https://www.hdf-kino.de/datenschutz/",
