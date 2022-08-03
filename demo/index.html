@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>microCmp demo</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var s = document.createElement("script")
+            s.src = "../src/microCmp.js"
+            document.head.appendChild(s)
+            s.onload = function() {
+                microCmp.addTranslation("de", {
+                    text: "Wir möchten Trackings anwenden, um Ihre Nutzung der Webseite zu verstehen. Diese benötigen u.a. das Speichern von Cookies. Mehr in unserer <a href='#' class='microCmp_link'>Datenschutzerklärung</a>",
+                    link: "https://www.hdf-kino.de/datenschutz/",
+                    accept: "ALLES ANNEHMEN",
+                    refuse: "ALLES BLOCKIEREN",
+                });
+                microCmp.setLanguage("de");
+                microCmp.init();
+            }
+        })
+    </script>
+</head>
+<body>
+    <style>
+        * {
+            box-sizing: border-box;
+            border: 0px;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .microCmp_notice {
+            display: none;
+            position: absolute;
+            background-color: #353744;
+            width: 292px;
+            bottom: 0px;
+            right: 0px;
+            color: #f9f9f9;
+            margin: 16px;
+            font-family: Avenir;
+            font-size: 12px;
+            padding-top: 16px;
+            padding-bottom: 16px;
+            box-shadow: 0 0 18px rgba(0, 0, 0, 0.2);
+        }
+
+        .microCmp_text {
+            line-height: 18px;
+            padding: 0px 16px 8px 16px;
+        }
+
+        .microCmp_buttons {
+            margin: 10px 12px 10px 12px;
+            width: 260px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .microCmp_button {
+            background-color: rgba(249, 249, 249, 0.1);
+            width: 100%;
+            height: 35px;
+            border: none;
+            color: #f9f9f9;
+            margin: 5px 0px;
+            border-radius: 4px;
+            font-size: 12px;
+            letter-spacing: 1.1px;
+            font-weight: 500;
+            font-family: Avenir;
+            cursor: pointer;
+        }
+
+        .microCmp_link {
+            color: #1276ce;
+            font-weight: bold;
+        }
+
+        .microCmp_active {
+            display: block;
+        }
+
+        @media (max-width: 1000px) {
+            .microCmp_notice {
+                position: absolute;
+                width: 100%;
+                top: 0px;
+                bottom: unset;
+                right: unset;
+                margin: 0px;
+            }
+            .microCmp_buttons {
+                flex-direction: row;
+                justify-content: space-between;
+                width: unset;
+                margin-inline: 16px;
+            }
+            .microCmp_button {
+                width: 49%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .microCmp_notice {
+                position: absolute;
+                width: 100%;
+                top: 0px;
+                bottom: unset;
+                right: unset;
+                margin: 0px;
+            }
+            .microCmp_buttons {
+                flex-direction: column;
+                width: unset;
+            }
+            .microCmp_button {
+                width: unset;
+            }
+        }
+    </style>
+    <div class="microCmp_notice">
+        <div class="microCmp_text"></div>
+        <div class="microCmp_buttons">
+          <button class="microCmp_refuse microCmp_button"></button>
+          <button class="microCmp_accept microCmp_button"></button>
+        </div>
+    </div>
+    
+</body>
+</html>

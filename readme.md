@@ -28,7 +28,20 @@ microCmp is a minimalist javascript-HTML-CSS-based CMP that enables you to trigg
 
 - Download the microCmp code from [this page](https://github.com/dnsdrs/microCmp/blob/main/microCmp.js)
 - Host it on your project
-- Insert the script (for instance `<script src="/microCmp.js">`) tag as high as possible in the `<head>` section of all your pages
+- Insert the script tag as high as possible in the `<head>` section of all your pages using :
+
+```html
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var s = document.createElement("script")
+    s.src = "../src/microCmp.js"
+    document.head.appendChild(s)
+    s.onload = function () {
+      // insert microCmp functions here (addTranslation, setLanguage, init) -- see sections 4 to 6
+    }
+  })
+</script>
+```
 
 ### 2. **Add the microCmp HTML to all your pages**
 
@@ -185,6 +198,29 @@ microCmp.addTranslation("de", {
 - just use `microCmp.init()` to display the microCmp and start using it
 - note that you can use `microCmp.toTriggerOnConsent.push` before `microCmp.init()` but the functions will run only on `init()` (if all conditions are met)
 
+Full initial configuration will look like that :
+
+```html
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var s = document.createElement("script")
+    s.src = "../src/microCmp.js"
+    document.head.appendChild(s)
+    s.onload = function () {
+      // insert microCmp functions here (addTranslation, setLanguage, init) -- see sections 4 to 6
+      microCmp.addTranslation("de", {
+        text: "Wir möchten Trackings anwenden, um Ihre Nutzung der Webseite zu verstehen. Diese benötigen u.a. das Speichern von Cookies. Mehr in unserer <a href='#' class='microCmp_link'>Datenschutzerklärung</a>",
+        link: "https://www.hdf-kino.de/datenschutz/",
+        accept: "ALLES ANNEHMEN",
+        refuse: "ALLES BLOCKIEREN",
+      })
+      microCmp.setLanguage("de")
+      microCmp.init()
+    }
+  })
+</script>
+```
+
 ### 6. **Use the microCMP**
 
 The end goal of this microCmp boils down to managing if and when code should run.
@@ -230,6 +266,6 @@ Please note that you cannot push named function directly in the queue
 
 ## Backlog
 
-- [ ] Add a demo page
+- [x] Add a demo page
 - [ ] Delete all first party cookies on click to Refuse or on `microCmp.reset()`
 - [ ] Group all public functions (`microCmp.public.function()`) for clarity
