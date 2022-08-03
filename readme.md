@@ -183,8 +183,8 @@ Use the following classes to style your microCmp :
 
 ```js
 microCmp.addTranslation("de", {
-  text: "Wir benutzen Cookies. Bitte lesen Sie sich <a href='#' class='microCmp_link'>diesem Text</a>",
-  link: "https://privacy.thewaltdisneycompany.com/fr/regles-de-respect-de-la-vie-privee/quest-ce-quun-cookie/",
+  text: "Wir möchten Trackings anwenden, um Ihre Nutzung der Webseite zu verstehen. Diese benötigen u.a. das Speichern von Cookies. Mehr in unserer <a href='#' class='microCmp_link'>Datenschutzerklärung</a>",
+  link: "https://www.hdf-kino.de/datenschutz/",
   accept: "ALLES ANNEHMEN",
   refuse: "ALLES BLOCKIEREN",
 })
