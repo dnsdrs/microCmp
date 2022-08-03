@@ -227,6 +227,8 @@ The end goal of this microCmp boils down to managing if and when code should run
 To do that, just add your code in here:
 
 ```js
+window.microCmp = window.microCmp || {}
+microCmp.toTriggerOnConsent = microCmp.toTriggerOnConsent || []
 microCmp.toTriggerOnConsent.push(function () {
   // your code here
 })
@@ -237,12 +239,12 @@ It will append your code as a function to a queue:
 - If the consent is not given (or given yet), the queue won't be executed.
 - If or when the consent is given, all functions pushed to the queue will run.
 
-Please note that you cannot push named function directly in the queue
+Please note that you cannot push named function directly in the queue and that you need absolutely need the first two lines
 
 > ⛔️ Don't do that ⛔️
 >
 > ```js
-> microCmp.toTriggerOnConsent.push(myFunction())
+> microCmp.toTriggerOnConsent.push(myFunction(); myOtherFunction())
 > ```
 >
 > ```js
@@ -252,12 +254,17 @@ Please note that you cannot push named function directly in the queue
 > 👍 Do that instead 👍
 >
 > ```js
+> window.microCmp = window.microCmp || {}
+> microCmp.toTriggerOnConsent = microCmp.toTriggerOnConsent || []
 > microCmp.toTriggerOnConsent.push(function () {
 >   myFunction()
+>   myOtherFunction()
 > })
 > ```
 >
 > ```js
+> window.microCmp = window.microCmp || {}
+> microCmp.toTriggerOnConsent = microCmp.toTriggerOnConsent || []
 > microCmp.toTriggerOnConsent.push(function () {
 >   console.log("unicorn")
 > })

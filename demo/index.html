@@ -13,13 +13,22 @@
             s.onload = function() {
                 microCmp.addTranslation("de", {
                     text: "Wir möchten Trackings anwenden, um Ihre Nutzung der Webseite zu verstehen. Diese benötigen u.a. das Speichern von Cookies. Mehr in unserer <a href='#' class='microCmp_link'>Datenschutzerklärung</a>",
-                    link: "https://www.hdf-kino.de/datenschutz/",
+                    link: "https://www.example.de/datenschutz/",
                     accept: "ALLES ANNEHMEN",
                     refuse: "ALLES BLOCKIEREN",
                 });
                 microCmp.setLanguage("de");
                 microCmp.init();
             }
+        })
+    </script>
+    <script>
+        window.microCmp = window.microCmp || {}
+        microCmp.toTriggerOnConsent = microCmp.toTriggerOnConsent || []
+        microCmp.toTriggerOnConsent.push(function () {
+
+            console.log("example")
+
         })
     </script>
 </head>
